@@ -20,6 +20,7 @@ datacleaning <- function(wd){
   moviedata <- moviedata[!(is.na(moviedata$actor_3_facebook_likes)), ]
   moviedata <- moviedata[!(is.na(moviedata$budget)), ]
   moviedata <- moviedata[!(is.na(moviedata$content_rating)), ]
+  moviedata <- moviedata[!(is.na(moviedata$gross)), ]
   
   # unlikely predictor but useful - changed NA to the mean value or color because it's probabably color
   moviedata$duration[is.na(moviedata$duration)] <- round(mean(moviedata$duration, na.rm = TRUE))
